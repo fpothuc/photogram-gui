@@ -6,9 +6,13 @@
   <dd><%=@the_user.id%></dd>
 
   <dt>Edit user</dt>
-
-  <form>
-  </form>
+  <dd>
+    <form>
+      <label for="box_new_username">Username</label>
+      <input id="box_new_username" name="query_username" value="<%=@the_user.username%>">
+      <button>Update user</button>
+    </form>
+  </dd>
 
 </dl>
 
