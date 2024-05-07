@@ -17,14 +17,14 @@
 
   <dt>Edit Photo</dt>
   <dd>
-    <form action="/update_photo/<%=@the_photo.id%>">
+    <form action="/update_photo/<%=@the_photo.id%>" method="post">
       <label for="browser_image">Image</label>
-      <input id="browser_image" type="text" name="input_image" placeholder="Enter a url for the image..." value="<%=@the_photo.image%>">
+      <input id="browser_image" type="text" name="query_image" value="<%=@the_photo.image%>">
 
       <label for="browser_caption">Caption</label>
-      <input id="browser_caption" type="text" name="input_caption" placeholder="Enter a caption for the image..." value="<%=@the_photo.caption%>">
+      <textarea id="browser_caption" name="query_caption"><%=@the_photo.caption%></textarea>
 
-      <button>Update photo</button>
+      <button type="submit">Update photo</button>
     </form>
   </dd>
 
@@ -54,17 +54,14 @@
   </table>
 
   <h3>Add a new comment</h3>
-  <form action="/add_comment/<%=@the_photo.id%>">
-      <label for="photo_id">Photo ID</label>
-      <input id="photo_id" type="text" name="input_photo" value="<%=@the_photo.id%>">
+  <form action="/add_comment/<%=@the_photo.id%>" method="post">
+    <label for="author_id">Author ID</label>
+    <input id="author_id" type="text" name="comment_author_id">
 
-      <label for="author_id">Image</label>
-      <input id="author_id" type="text" name="input_author">
+    <label for="comment_body">Comment</label>
+    <textarea id="comment_body" name="comment_body"></textarea>
 
-      <label for="comment_body">Image</label>
-      <input id="comment_body" type="text" name="input_comment">
-
-      <button>Update photo</button>
-    </form>
+    <button type="submit">Add comment</button>
+  </form>
 
 </dl>
