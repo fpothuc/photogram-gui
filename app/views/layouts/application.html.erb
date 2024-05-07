@@ -12,19 +12,54 @@
       }
       body a {
         color: #034732;
+        text-decoration: none;
+      }
+      
+      body h1 {
+        background-color: #3D2C2E;
+        color: #F2E5D7;
+        border-style: outset;
+        border-color: #886F68;
+      }
+
+      .navbar {
+        background-color: #008148;
+        border-style: outset;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #008148;
+      }
+
+      .navbar li {
+        float: left;
+      }
+
+      .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Change the link color to #111 (black) on hover */
+      .navbar li a:hover {
+        color: white;
+        background-color: #034732;
       }
     </style>
   </head>
 
   <body>
-    <ul>
-      <li>
-        <a href = "/users">Users</a>
-      </li>
-      <li>
-        <a href = "/photos">Photos</a>
-      </li>
-    </ul>
+    <div class="navbar">
+      <a href = "/users">Users</a>
+      <a href = "/photos">Photos</a>
+    </div>
     <%= yield %>
   </body>
 </html>
