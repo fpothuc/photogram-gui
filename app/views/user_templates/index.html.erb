@@ -6,7 +6,7 @@
 </form>
 
 <table border="1">
-  <tr>
+  <tr style="background-color: #008148">
     <th>
       ID
     </th>
@@ -17,5 +17,17 @@
     </th>
   </tr>
 
-  <%@list_of_users%>
+  <%@list_of_users.each do |a_user|%>
+    <tr>
+      <td>
+        <%=a_user.id%>
+      </td>
+      <td>
+        <%=a_user.username%>
+      </td>
+      <td>
+        <a href="/users/<%=a_user.id%>">Show Details</a>
+      </td>
+    </tr>
+  <%end%>
 </table>
