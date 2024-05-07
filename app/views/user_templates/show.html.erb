@@ -1,9 +1,9 @@
-<h1 style="background-color: #034732;">Individual user</h1>
+<h1 style="background-color: #034732;"><%=@the_user.username%></h1>
 
 <dl>
   <dt>ID</dt>
 
-  <dd>42</dd>
+  <dd><%=@the_user.id%></dd>
 
   <dt>Edit user</dt>
 
@@ -14,5 +14,24 @@
 
 <h2 style="color: #008148;">Photos</h2>
 
+<p><%=@the_user.own_photos%></p>
+
 <table border="1">
+  <tr>
+    <th>Image</th>
+    <th>Owner</th>
+    <th>Caption</th>
+    <th>Posted</th>
+    <th></th>
+  </tr>
+    
+  <%@the_user.own_photos.each do |a_post|%>
+    <tr>
+      <td><img src="<%=a_post.image%>"></td>
+      <td><%=a_post.poster.username%></td>
+      <td><%=a_post.caption%></td>
+      <td><%=a_post.created_at%></td>
+      <td><a href="/photos">Show details</td>
+    </tr>
+  <%end%>
 </table>
