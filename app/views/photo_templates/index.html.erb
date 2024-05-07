@@ -1,1 +1,40 @@
 <h1>Photos</h1>
+
+<table border="1">
+  <tr style="background-color: #008148">
+    <th>
+      Image
+    </th>
+    <th>
+      Caption
+    </th>
+    <th>
+      Owner
+    </th>
+    <th>
+      Posted
+    </th>
+    <th>
+    </th>
+  </tr>
+
+  <%@list_of_photos.each do |a_post|%>
+    <tr>
+      <td>
+        <img src="<%=a_post.image%>">
+      </td>
+      <td>
+        <%=a_post.caption%>
+      </td>
+      <td>
+        <%=a_post.poster.username%>
+      </td>
+      <td>
+        <%=a_post.created_at%>
+      </td>
+      <td>
+        <a href="/users/<%=a_post.poster%>">Show Details</a>
+      </td>
+    </tr>
+  <%end%>
+</table>
