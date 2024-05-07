@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  def photos
+  def index
     render(:template => "photo_templates/index")
   end
 end
