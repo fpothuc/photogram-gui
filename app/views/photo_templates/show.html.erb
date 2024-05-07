@@ -30,7 +30,9 @@
 
   <dt>Delete photo</dt>
   <dd>
-    <a href = "/delete_photo/<%=@the_photo.id%>">Delete this photo</a>
+    <form action="/delete_photo/<%=@the_photo.id%>" method="post">
+      <button type="submit">Delete this photo</button>
+    </form>
   </dd>
 
   <h2>Comments</h2>
