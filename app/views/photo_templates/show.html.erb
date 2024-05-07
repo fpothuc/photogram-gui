@@ -47,5 +47,17 @@
   </table>
 
   <h3>Add a new comment</h3>
+  <form action="/add_comment/<%=@the_photo.id%>">
+      <label for="photo_id">Photo ID</label>
+      <input id="photo_id" type="text" name="input_photo" value="<%=@the_photo.id%>">
+
+      <label for="author_id">Image</label>
+      <input id="author_id" type="text" name="input_author">
+
+      <label for="comment_body">Image</label>
+      <input id="comment_body" type="text" name="input_comment">
+
+      <button>Update photo</button>
+    </form>
 
 </dl>
