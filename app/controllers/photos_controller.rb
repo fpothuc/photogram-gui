@@ -6,4 +6,8 @@ class PhotosController < ApplicationController
 
     render(:template => "photo_templates/index")
   end
+
+  def show
+    render(:template => "photo_templates/show")
+  end
 end
