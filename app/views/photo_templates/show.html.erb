@@ -30,15 +30,14 @@
 
   <dt>Delete photo</dt>
   <dd>
-    <form action="/delete_photo/<%=@the_photo.id%>" method="post">
-      <button type="submit">Delete this photo</button>
+    <a href="/delete_photo/<%=@the_photo.id%>">Delete photo</a>
     </form>
   </dd>
 
   <h2>Comments</h2>
 
   <table>
-    <tr>
+    <tr style="background-color: #886F68;">
       <th>Commenter</th>
       <th>Comment</th>
       <th>Posted</th>

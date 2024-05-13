@@ -32,13 +32,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    new_username = params.fetch("query_username")
     input_id = params.fetch("path_id")
-    
-    matching_user = User.where({:id => input_id})
+    matching_user = User.where({:username => input_id})
     the_user = matching_user.at(0)
 
-    the_user.username = new_username
+    new_username = params.fetch("query_username")
+
+    the_user.username = new_username.to_s
     the_user.save
 
     redirect_to("/users/" + the_user.username.to_s)

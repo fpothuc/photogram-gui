@@ -7,20 +7,23 @@
 
   <dt>Edit user</dt>
   <dd>
-    <form>
+    <form action="/update_user/<%=@the_user.username%>" method="post">
       <label for="box_new_username">Username</label>
-      <input id="box_new_username" name="query_username" value="<%=@the_user.username%>">
+      <input id="box_new_username" type="text" name="query_username" value="<%=@the_user.username%>">
       <button>Update user</button>
     </form>
   </dd>
 
 </dl>
 
-<h2 style="color: #008148;">Photos</h2>
-<h3><%=@the_user.own_photos.count.to_s%> photos</h3>
+<%if @the_user.own_photos.count == 1%>
+  <h2><%=@the_user.own_photos.count.to_s%> Photo</h2>
+<%else%>
+  <h2><%=@the_user.own_photos.count.to_s%> Photos</h2>
+<%end%>
 
 <table border="1">
-  <tr>
+  <tr style="background-color: #886F68;">
     <th>Image</th>
     <th>Owner</th>
     <th>Caption</th>
@@ -34,7 +37,7 @@
       <td><%=a_post.poster.username%></td>
       <td><%=a_post.caption%></td>
       <td><%=a_post.created_at%></td>
-      <td><a href="/photos">Show details</td>
+      <td><a href="/photos/<%=a_post.id%>">Show details</td>
     </tr>
   <%end%>
 </table>
